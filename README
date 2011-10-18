@@ -1,0 +1,5 @@
+This is just a simple TODO sample application to demonstrate how to develop a 
+non-relational database driven ZK application using mongoDB and Spring Data support for MongoDB.
+To be able to run this application you need to have a mongoDB instance up and running with default configuration. 
+This is a Maven project so just import and build it using m2eclipse plugin.
+Once deployed to web server hit localhost:8080/springzktodo/todo.zul

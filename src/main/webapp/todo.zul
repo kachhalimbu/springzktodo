@@ -1,0 +1,19 @@
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<window title="Simple Todo application with mongoDB Java driver" width="640px" border="normal" apply="${todoCtrl}">
+	<listbox id="tasks" multiple="true" rows="10">
+		<listhead>
+			<listheader label="Item" />
+			<listheader label="Priority" width="50px" />
+			<listheader label="Date" width="90px" />
+		</listhead>
+	</listbox>
+	<groupbox>
+		<caption label="Event" />
+		Item: <textbox id="name" constraint="no empty" cols="25" />
+		Priority: <intbox id="priority" cols="1" constraint="no empty"/>
+		Date: <datebox id="date" cols="8" />
+		<button id="add" label="Add" />
+		<button id="update" label="Update" />
+		<button id="delete" label="Delete" />
+	</groupbox>
+</window>
