@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Task {
 	private String id;
 	private String name;
-	private int priority;
+	private Integer priority;
 	private Date executionDate;
 	
 	public Task(){ }
@@ -23,10 +23,10 @@ public class Task {
 		this.priority = priority;
 		this.setExecutionDate(date);
 	}
-	public int getPriority() {
+	public Integer getPriority() {
 		return priority;
 	}
-	public void setPriority(int priority) {
+	public void setPriority(Integer priority) {
 		this.priority = priority;
 	}
 	public String getId() {

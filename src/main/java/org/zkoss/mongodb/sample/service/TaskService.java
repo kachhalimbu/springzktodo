@@ -7,13 +7,13 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.springframework.data.document.mongodb.MongoTemplate;
-import org.springframework.data.document.mongodb.query.Query;
-import org.springframework.data.document.mongodb.query.Update;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.zkoss.mongodb.sample.model.Task;
-import static org.springframework.data.document.mongodb.query.Criteria.where;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 /**
  * @author Ashish
@@ -35,29 +35,23 @@ public class TaskService {
 	public void add(Task task) {
 		try {
 			mongoTemplate.insert(task);
-		} catch(Exception e) {
-			
-		}
+		} catch(Exception e) {}
 	}
 	public void update(Task task) {
 		Query query = new Query(where("id").is(task.getId()));
 		try {
 			Update update = new Update();
 			update.set("name", task.getName());
-			mongoTemplate.updateMulti(query, update);
-			update.set("priority", task.getName());
-			mongoTemplate.updateMulti(query, update);
-		} catch(Exception e) {
-			
-		}
+			mongoTemplate.updateMulti(query, update, Task.class);
+			update.set("priority", task.getPriority());
+			mongoTemplate.updateMulti(query, update, Task.class);
+		} catch(Exception e) {}
 	}
 	public void delete(Task task) {
 		try {
 			Query query = new Query(where("id").is(task.getId()));
 	         // Run the query and delete the entry
-	         mongoTemplate.remove(query);
-		} catch(Exception e) {
-			
-		}
+	         mongoTemplate.remove(query, Task.class);
+		} catch(Exception e) {}
 	}
 }
