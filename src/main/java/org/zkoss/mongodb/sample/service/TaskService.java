@@ -42,8 +42,8 @@ public class TaskService {
 		try {
 			Update update = new Update();
 			update.set("name", task.getName());
-			mongoTemplate.updateMulti(query, update, Task.class);
 			update.set("priority", task.getPriority());
+			update.set("executionDate", task.getExecutionDate());
 			mongoTemplate.updateMulti(query, update, Task.class);
 		} catch(Exception e) {}
 	}

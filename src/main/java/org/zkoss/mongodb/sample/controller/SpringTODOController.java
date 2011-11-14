@@ -52,7 +52,6 @@ public class SpringTODOController extends GenericForwardComposer {
 				new Listcell(new SimpleDateFormat("yyyy-MM-dd").format(task.getExecutionDate())).setParent(item);
 			}
 		});
-		
 	}
 	public void onSelect$tasks(SelectEvent evt) {
 		Task task = (Task) tasks.getSelectedItem().getValue();

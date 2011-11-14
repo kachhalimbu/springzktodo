@@ -1,7 +1,6 @@
 package org.zkoss.mongodb.sample.model;
 
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * 

@@ -1,6 +1,6 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
-<window title="Simple Todo application with mongoDB Java driver" width="640px" border="normal" apply="${todoCtrl}">
+<window title="Simple Todo application with Spring data support for mongodb" width="640px" border="normal" apply="${todoCtrl}">
 	<listbox id="tasks" multiple="true" rows="10">
 		<listhead>
 			<listheader label="Item" />
